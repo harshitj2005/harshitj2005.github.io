@@ -1,0 +1,81 @@
+<!-- _includes/resume-section.html -->
+
+<div class="resume">
+
+  <!-- Summary -->
+  <section class="resume-summary">
+    <p>{{ site.data.resume.summary }}</p>
+  </section>
+
+  <!-- Skills -->
+  <section>
+    <h2>Skills</h2>
+    <table>
+      <tr><td><strong>Languages</strong></td><td>{{ site.data.resume.skills.languages | join: ", " }}</td></tr>
+      <tr><td><strong>Frameworks</strong></td><td>{{ site.data.resume.skills.frameworks | join: ", " }}</td></tr>
+      <tr><td><strong>Databases</strong></td><td>{{ site.data.resume.skills.databases | join: ", " }}</td></tr>
+      <tr><td><strong>Cloud</strong></td><td>{{ site.data.resume.skills.cloud | join: ", " }}</td></tr>
+      <tr><td><strong>Tools</strong></td><td>{{ site.data.resume.skills.tools | join: ", " }}</td></tr>
+      <tr><td><strong>Patterns</strong></td><td>{{ site.data.resume.skills.patterns | join: ", " }}</td></tr>
+    </table>
+  </section>
+
+  <!-- Experience -->
+  <section>
+    <h2>Experience</h2>
+    {% for job in site.data.resume.experience %}
+      <h3>{{ job.company }}</h3>
+      {% for role in job.roles %}
+        <div class="role">
+          <div class="role-header">
+            <strong>{{ role.title }}</strong>
+            <span class="period">{{ role.period }} · {{ role.location }}</span>
+          </div>
+          <ul>
+            {% for item in role.highlights %}
+              <li>{{ item }}</li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    {% endfor %}
+  </section>
+
+  <!-- Education -->
+  <section>
+    <h2>Education</h2>
+    {% for edu in site.data.resume.education %}
+      <div class="role">
+        <strong>{{ edu.degree }}</strong><br>
+        {{ edu.institution }} · {{ edu.year }}<br>
+        <ul>
+          {% for note in edu.notes %}
+            <li>{{ note }}</li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endfor %}
+  </section>
+
+  <!-- Certifications -->
+  <section>
+    <h2>Certifications</h2>
+    <ul>
+      {% for cert in site.data.resume.certifications %}
+        <li>{{ cert }}</li>
+      {% endfor %}
+    </ul>
+  </section>
+
+</div>
+
+<style>
+  .resume section { margin-bottom: 2rem; }
+  .resume h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; }
+  .role { margin-bottom: 1.2rem; }
+  .role-header { display: flex; justify-content: space-between; flex-wrap: wrap; }
+  .period { color: var(--text-muted-color); font-size: 0.9rem; }
+  .resume table { width: 100%; border-collapse: collapse; }
+  .resume table td { padding: 0.3rem 0.5rem; vertical-align: top; }
+  .resume table td:first-child { width: 140px; white-space: nowrap; }
+</style>

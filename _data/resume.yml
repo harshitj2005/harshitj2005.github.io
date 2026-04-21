@@ -1,0 +1,109 @@
+# _data/resume.yml
+# Sourced from Harshit Jain's resume — update as needed
+
+contact:
+  phone: "+1-484-536-9012"
+  email: "Harshitj2005@gmail.com"
+  linkedin: "linkedin.com/in/yourprofile"
+
+summary: >
+  Technologist with 10+ years in scalable architecture and microservices,
+  specializing in JavaScript/TypeScript, Node.js, and GraphQL. Proven track
+  record in delivering tech-forward solutions integrating third-party SaaS
+  tools and automation to enhance operational efficiency.
+
+skills:
+  languages: [JavaScript, TypeScript, PHP]
+  frameworks: [NestJS, Node.js, GraphQL, Symfony3]
+  databases: [MySQL, MongoDB, Redis]
+  cloud: [AWS, Azure, GCP]
+  tools: [Docker, Kubernetes, Kafka, RabbitMQ, Camunda BPMN, OpenShift]
+  patterns: [Microservices, Saga, Circuit Breaker, GraphQL Federation, REST]
+
+certifications:
+  - Google Cloud Professional Cloud Architect
+  - Google Cloud Professional Cloud Developer
+  - Professional Scrum Master (PSM 1)
+  - ICAgile Certified Professional – Foundations of AI
+
+education:
+  - degree: Bachelor of Technology (B.Tech) — Computer Science & Engineering
+    institution: Kurukshetra University, Haryana, India
+    year: "2010 – 2014"
+    notes:
+      - "CGPA: 7.2/10.0"
+      - "20th Rank in CSE department"
+      - Merit holder
+
+experience:
+  - company: Nagarro Software
+    roles:
+      - title: Associate Principal Engineer
+        period: "Nov 2023 – Present"
+        location: Pennsylvania, USA
+        highlights:
+          - Architected GraphQL schema design that reduced data over-fetching by 40%
+          - Orchestrated business logic using GraphQL to abstract downstream communication with Autodesk, MuleSoft, and Mendex
+          - Integrated with Revit to automate construction site design and delivery workflows, reducing project timelines by 30%
+          - Implemented GraphQL federation enabling autonomous team development while maintaining unified API schema, increasing velocity by 25%
+
+      - title: Senior Staff Engineer
+        period: "May 2022 – Nov 2023"
+        location: Pennsylvania, USA
+        highlights:
+          - Led microservices platform architecture using Node.js and NestJS, improving scalability and resiliency
+          - Rewrote order fulfillment system with Saga pattern for auto-refunds, reducing customer service tickets by 70% and increasing revenue by 20%
+          - Integrated New Relic telemetry dashboards and alerts, reducing MTTR by 60%
+          - Optimized database queries and caching strategies, reducing API response times by 85%
+
+      - title: Staff Engineer
+        period: "Apr 2021 – Apr 2022"
+        location: Noida, India
+        highlights:
+          - Led development team of 20+ engineers across microservices architecture
+          - Redesigned critical APIs reducing response time from 200ms to 4ms using Redis, Fastify, and NestJS
+          - Implemented circuit breaker patterns improving system resilience by 90%
+
+      - title: Associate Staff Engineer
+        period: "Apr 2019 – Mar 2021"
+        location: Gurugram, India
+        highlights:
+          - Telco Lead for digital transformation of a major Middle Eastern telecom operator
+          - Orchestrated BSS, Ericsson Mobile Activation, and government system (SIMATI, ABSHER) integration via Camunda BPMN
+          - Built containerized microservices on OpenShift for fully digital onboarding and self-care
+          - Developed RabbitMQ services processing 1M+ async operations/day at 99.9% reliability
+
+      - title: Senior Software Engineer
+        period: "Oct 2017 – Mar 2019"
+        location: Gurugram, India
+        highlights:
+          - Built RESTful APIs on Symfony3 with 40ms average response time
+          - Contributed to technical architecture decisions and full SDLC delivery
+
+  - company: GoldVIP Technology Solutions (Crown It)
+    roles:
+      - title: Senior Software Engineer
+        period: "Jun 2015 – Oct 2017"
+        location: Gurugram, India
+        highlights:
+          - Rebuilt mobile app backend in Node.js, improving performance by 300%
+          - Developed async data-processing middleware, reducing processing time by 70%
+          - Created in-house Communication Manager for targeted marketing, increasing campaign effectiveness by 45%
+          - Led AWS to Azure migration, improving cloud cost efficiency by 25%
+
+  - company: FierceHound Media & Consulting
+    roles:
+      - title: Senior Associate Web Development
+        period: "Jun 2014 – Jun 2015"
+        location: Gurugram, India
+        highlights:
+          - Developed web applications using PHP MVC frameworks (CakePHP, YII 2.0)
+
+  - company: Web Expert Online
+    roles:
+      - title: Web Developer
+        period: "Dec 2013 – Jun 2014"
+        location: New Delhi, India
+        highlights:
+          - Developed web software using PHP, WordPress, and Joomla
+          - Created custom WordPress plugins optimizing site performance by 35%

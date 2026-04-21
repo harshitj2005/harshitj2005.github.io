@@ -1,0 +1,64 @@
+# _config.yml
+title: Harshit Jain
+tagline: Senior Software Architect · GraphQL · Microservices · Node.js
+description: >-
+  Personal site and technical blog of Harshit Jain — Associate Principal Engineer
+  at Nagarro, specializing in distributed systems, microservices architecture, and
+  scalable GraphQL APIs.
+
+url: "https://harshitj2005.github.io"
+baseurl: ""
+
+github:
+  username: harshitj2005
+
+social:
+  name: Harshit Jain
+  email: Harshitj2005@gmail.com
+  links:
+    - https://linkedin.com/in/yourprofile  # UPDATE
+
+theme: jekyll-theme-chirpy
+
+# Timezone
+timezone: America/New_York
+
+# Pagination for blog
+paginate: 10
+
+# Collections
+collections:
+  tabs:
+    output: true
+    sort_by: order
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: false
+      toc: true
+  - scope:
+      path: ""
+      type: tabs
+    values:
+      layout: page
+      permalink: /:title/
+
+# Navigation order
+navigation:
+  - title: Home
+    url: /
+  - title: Resume
+    url: /resume/
+  - title: Blog
+    url: /blog/
+
+exclude:
+  - "*.gem"
+  - "*.gemspec"
+  - Gemfile.lock
+  - vendor
+  - README.md
