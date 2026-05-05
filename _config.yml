@@ -18,7 +18,7 @@ social:
   links:
     - https://linkedin.com/in/yourprofile  # UPDATE
 
-theme: jekyll-theme-chirpy
+remote_theme: cotes2004/jekyll-theme-chirpy
 
 # Timezone
 timezone: America/New_York
