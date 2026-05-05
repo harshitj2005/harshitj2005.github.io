@@ -1,9 +1,21 @@
 <!-- _includes/resume-section.html -->
 
 <div class="resume">
+  <!-- Contact Header -->
+  <section class="resume-contact">
+    <h1 class="resume-name">{{ site.data.resume.contact.name }}</h1>
+    <p class="resume-contact-links">
+      <a href="mailto:{{ site.data.resume.contact.email }}">{{ site.data.resume.contact.email }}</a>
+      &nbsp;·&nbsp;
+      <a href="https://{{ site.data.resume.contact.linkedin }}" target="_blank">{{ site.data.resume.contact.linkedin }}</a>
+      &nbsp;·&nbsp;
+      {{ site.data.resume.contact.phone }}
+    </p>
+  </section>
 
   <!-- Summary -->
-  <section class="resume-summary">
+  <section>
+    <h2>Summary</h2>
     <p>{{ site.data.resume.summary }}</p>
   </section>
 
@@ -46,8 +58,11 @@
     <h2>Education</h2>
     {% for edu in site.data.resume.education %}
       <div class="role">
-        <strong>{{ edu.degree }}</strong><br>
-        {{ edu.institution }} · {{ edu.year }}<br>
+        <div class="role-header">
+          <strong>{{ edu.degree }}</strong>
+          <span class="period">{{ edu.year }}</span>
+        </div>
+        <span class="edu-institution">{{ edu.institution }}</span>
         <ul>
           {% for note in edu.notes %}
             <li>{{ note }}</li>
@@ -76,7 +91,7 @@
           <strong>{{ award.name }}</strong>
           <span class="period">{{ award.org }} · {{ award.period }}</span>
         </div>
-        <p>{{ award.note }}</p>
+        <span class="award-note">{{ award.note }}</span>
       </div>
     {% endfor %}
   </section>
@@ -84,12 +99,55 @@
 </div>
 
 <style>
+  /* Layout */
   .resume section { margin-bottom: 2rem; }
-  .resume h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; }
+  .resume h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.3rem; margin-top: 1.5rem; }
+  .resume h3 { margin-bottom: 0.4rem; margin-top: 1.2rem; }
+
+  /* Contact header */
+  .resume-contact { text-align: center; margin-bottom: 1.5rem; }
+  .resume-name { font-size: 1.8rem; margin-bottom: 0.3rem; border: none; }
+  .resume-contact-links { font-size: 0.9rem; color: var(--text-muted-color); }
+  .resume-contact-links a { color: var(--link-color); text-decoration: none; }
+  .resume-contact-links a:hover { text-decoration: underline; }
+
+  /* Download button */
+  .resume-actions { text-align: right; margin-bottom: 1rem; }
+  .resume-download-btn {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--btn-patched-color, #fff);
+    background-color: var(--btn-box-shadow, var(--link-color));
+    border: 1px solid var(--link-color);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: opacity 0.15s ease;
+  }
+  .resume-download-btn:hover { opacity: 0.85; text-decoration: none; }
+
+  /* Role blocks */
   .role { margin-bottom: 1.2rem; }
-  .role-header { display: flex; justify-content: space-between; flex-wrap: wrap; }
-  .period { color: var(--text-muted-color); font-size: 0.9rem; }
+  .role-header { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: baseline; gap: 0.25rem; }
+  .period { color: var(--text-muted-color); font-size: 0.85rem; white-space: nowrap; }
+
+  /* Education */
+  .edu-institution { display: block; font-size: 0.9rem; color: var(--text-muted-color); margin-bottom: 0.2rem; }
+
+  /* Award note */
+  .award-note { display: block; font-size: 0.9rem; color: var(--text-muted-color); margin-top: 0.2rem; }
+
+  /* Skills table */
   .resume table { width: 100%; border-collapse: collapse; }
   .resume table td { padding: 0.3rem 0.5rem; vertical-align: top; }
   .resume table td:first-child { width: 140px; white-space: nowrap; }
+
+  /* Print styles — hide button, clean layout */
+  @media print {
+    .resume-actions { display: none; }
+    .resume h2 { border-bottom: 1px solid #ccc; }
+    .resume-contact-links a { color: inherit; }
+    a[href]::after { content: none !important; }
+  }
 </style>

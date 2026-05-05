@@ -1,17 +1,18 @@
 # _data/resume.yml
 
 contact:
+  name: "Harshit Jain"
   phone: "+1-484-536-9012"
   email: "Harshitj2005@gmail.com"
   linkedin: "linkedin.com/in/harshitj2005"
 
 summary: >
-  Technologist with 10+ years in scalable architecture and microservices,
-  specializing in JavaScript/TypeScript, Node.js, and GraphQL. Proven track
-  record in delivering tech-forward solutions integrating third-party SaaS
-  tools and automation to enhance operational efficiency. Adaptable and
-  collaborative professional with a focus on data-driven problem-solving
-  in distributed systems.
+  Associate Principal Engineer with 10+ years designing distributed systems and microservices
+  architectures at enterprise scale. Specializes in TypeScript/Node.js, GraphQL federation,
+  Camunda BPMN orchestration, and resilience patterns — Saga, Circuit Breaker, event-driven
+  design. Led the engineering that cut order fulfillment failures by 70%, rebuilt critical APIs
+  from 200ms to 4ms response time, and delivered a telecom platform processing 1M+ async
+  operations daily at 99.9% reliability. Five-time recipient of Nagarro's Brightest Mind Award.
 
 skills:
   languages: [JavaScript, TypeScript, PHP]
@@ -34,6 +35,12 @@ certifications:
   - ICAgile Certified Professional – Foundations of AI
 
 education:
+  - degree: Post-Graduate Diploma — Advanced Communication Engineering with Quantum & AI Integration (CEPQIP)
+    institution: IIT Delhi (Continuing Education Programme)
+    year: "2025 – Present"
+    notes:
+      - Focused on quantum-classical hybrid systems and AI integration in distributed architectures
+
   - degree: Bachelor of Technology (B.Tech) — Computer Science & Engineering
     institution: Kurukshetra University, Haryana, India
     year: "2010 – 2014"
@@ -50,7 +57,7 @@ experience:
         location: Pennsylvania, USA
         highlights:
           - Architected GraphQL schema design that reduced data over-fetching by 40%, optimizing and securing communication between UI and microservices
-          - Orchestrated business logic using GraphQL to abstract downstream communication with Autodesk, MuleSoft, and Mendex systems
+          - Orchestrated business logic using GraphQL to abstract downstream communication with Autodesk, MuleSoft, and Mendix systems
           - Integrated with Revit to automate end-to-end processes for construction site design, material planning, and delivery, reducing project timelines by 30%
           - Implemented GraphQL federation enabling autonomous team development while maintaining a unified API schema, increasing development velocity by 25%
 
@@ -94,10 +101,12 @@ experience:
         period: "Jun 2015 – Oct 2017"
         location: Gurugram, India
         highlights:
-          - Rebuilt mobile app backend in Node.js, improving performance by 300%
-          - Developed async data-processing middleware in Node.js, reducing processing time by 70%
-          - Created in-house Communication Manager for targeted marketing across user segments, increasing campaign effectiveness by 45%
-          - Led migration from AWS to Microsoft Azure, improving cloud cost efficiency by 25%
+          - Led complete backend re-architecture of the consumer mobile app in Node.js, improving performance by 300% over the prior PHP system
+          - Built RabbitMQ-based queuing services for reliable sequential processing of async tasks; implemented Amazon SQS to manage concurrency under high-traffic conditions
+          - Developed in-house Communication Manager automating targeted marketing across customer segments without disrupting live applications, increasing campaign effectiveness by 45%
+          - Designed and implemented Campaign Manager enabling dynamic configuration of campaign rules and personalized user engagement workflows
+          - Performed extensive load testing on EC2 Auto Scaling Groups; identified and resolved memory leaks, latency bottlenecks, and database query inefficiencies
+          - Led AWS to Microsoft Azure cloud migration with near-zero downtime, reducing cloud costs by 25%
 
   - company: FierceHound Media & Consulting
     roles:
