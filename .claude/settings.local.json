@@ -1,12 +1,14 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git init:*)"
+      "Bash(git init:*)",
+      "Bash(brew install:*)",
+      "Bash(pdftotext:*)"
     ],
     "deny": [
       "Bash(git commit*)",
       "Bash(git push*)",
       "Bash(git add*)"
-  ]
+    ]
   }
 }

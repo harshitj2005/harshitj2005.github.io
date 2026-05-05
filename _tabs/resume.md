@@ -11,4 +11,4 @@ order: 2
 
 *Available for senior architecture roles, consulting, and speaking engagements.*
 
-[Download PDF version](#)  <!-- UPDATE: add link to PDF once hosted in /assets/ -->
+[Download PDF Resume](/assets/files/Harshit_Jain_2025.pdf){: .btn .btn-primary target="_blank"}

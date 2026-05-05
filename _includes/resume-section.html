@@ -67,6 +67,20 @@
     </ul>
   </section>
 
+  <!-- Awards -->
+  <section>
+    <h2>Awards</h2>
+    {% for award in site.data.resume.awards %}
+      <div class="role">
+        <div class="role-header">
+          <strong>{{ award.name }}</strong>
+          <span class="period">{{ award.org }} · {{ award.period }}</span>
+        </div>
+        <p>{{ award.note }}</p>
+      </div>
+    {% endfor %}
+  </section>
+
 </div>
 
 <style>

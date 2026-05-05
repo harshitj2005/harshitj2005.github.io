@@ -1,16 +1,17 @@
 # _data/resume.yml
-# Sourced from Harshit Jain's resume — update as needed
 
 contact:
   phone: "+1-484-536-9012"
   email: "Harshitj2005@gmail.com"
-  linkedin: "linkedin.com/in/yourprofile"
+  linkedin: "linkedin.com/in/harshitj2005"
 
 summary: >
   Technologist with 10+ years in scalable architecture and microservices,
   specializing in JavaScript/TypeScript, Node.js, and GraphQL. Proven track
   record in delivering tech-forward solutions integrating third-party SaaS
-  tools and automation to enhance operational efficiency.
+  tools and automation to enhance operational efficiency. Adaptable and
+  collaborative professional with a focus on data-driven problem-solving
+  in distributed systems.
 
 skills:
   languages: [JavaScript, TypeScript, PHP]
@@ -18,7 +19,13 @@ skills:
   databases: [MySQL, MongoDB, Redis]
   cloud: [AWS, Azure, GCP]
   tools: [Docker, Kubernetes, Kafka, RabbitMQ, Camunda BPMN, OpenShift]
-  patterns: [Microservices, Saga, Circuit Breaker, GraphQL Federation, REST]
+  patterns: [Microservices, Saga, Circuit Breaker, GraphQL Federation, REST, Resilient & Chaos Engineering]
+
+awards:
+  - name: Brightest Mind Award
+    org: Nagarro
+    period: "2019 – 2023"
+    note: Awarded for five consecutive years for high-impact engineering delivery
 
 certifications:
   - Google Cloud Professional Cloud Architect
@@ -42,43 +49,44 @@ experience:
         period: "Nov 2023 – Present"
         location: Pennsylvania, USA
         highlights:
-          - Architected GraphQL schema design that reduced data over-fetching by 40%
-          - Orchestrated business logic using GraphQL to abstract downstream communication with Autodesk, MuleSoft, and Mendex
-          - Integrated with Revit to automate construction site design and delivery workflows, reducing project timelines by 30%
-          - Implemented GraphQL federation enabling autonomous team development while maintaining unified API schema, increasing velocity by 25%
+          - Architected GraphQL schema design that reduced data over-fetching by 40%, optimizing and securing communication between UI and microservices
+          - Orchestrated business logic using GraphQL to abstract downstream communication with Autodesk, MuleSoft, and Mendex systems
+          - Integrated with Revit to automate end-to-end processes for construction site design, material planning, and delivery, reducing project timelines by 30%
+          - Implemented GraphQL federation enabling autonomous team development while maintaining a unified API schema, increasing development velocity by 25%
 
       - title: Senior Staff Engineer
         period: "May 2022 – Nov 2023"
         location: Pennsylvania, USA
         highlights:
-          - Led microservices platform architecture using Node.js and NestJS, improving scalability and resiliency
-          - Rewrote order fulfillment system with Saga pattern for auto-refunds, reducing customer service tickets by 70% and increasing revenue by 20%
-          - Integrated New Relic telemetry dashboards and alerts, reducing MTTR by 60%
-          - Optimized database queries and caching strategies, reducing API response times by 85%
+          - Led architectural design of microservices platform using Node.js and NestJS, improving system scalability and resiliency with low downtime and high throughput
+          - Rewrote order fulfillment system implementing the Saga pattern for auto-refunds during failures, reducing customer service tickets by 70% and increasing annual revenue by 20%
+          - Integrated New Relic with microservices to create telemetry dashboards and alerts, reducing MTTR by 60%
+          - Optimized database queries and implemented caching strategies that reduced API response times by 85%
 
       - title: Staff Engineer
         period: "Apr 2021 – Apr 2022"
         location: Noida, India
         highlights:
-          - Led development team of 20+ engineers across microservices architecture
-          - Redesigned critical APIs reducing response time from 200ms to 4ms using Redis, Fastify, and NestJS
-          - Implemented circuit breaker patterns improving system resilience by 90%
+          - Led development team of 20+ engineers, managing technical architecture for microservices
+          - Redesigned critical APIs reducing response time from 200ms to 4ms using Redis caching, Fastify, and NestJS
+          - Implemented circuit breaker patterns that improved system resilience during downstream service failures by 90%
 
       - title: Associate Staff Engineer
         period: "Apr 2019 – Mar 2021"
         location: Gurugram, India
         highlights:
-          - Telco Lead for digital transformation of a major Middle Eastern telecom operator
-          - Orchestrated BSS, Ericsson Mobile Activation, and government system (SIMATI, ABSHER) integration via Camunda BPMN
-          - Built containerized microservices on OpenShift for fully digital onboarding and self-care
-          - Developed RabbitMQ services processing 1M+ async operations/day at 99.9% reliability
+          - Served as Telco Lead for digital transformation of a major Middle Eastern telecom operator
+          - Orchestrated integration between BSS, network provisioning (Ericsson Mobile Activation), and government systems (SIMATI, ABSHER) using Camunda BPMN
+          - Built containerized microservices on OpenShift delivering a fully digital experience for customer onboarding and self-care
+          - Developed RabbitMQ queuing services processing 1M+ asynchronous operations daily at 99.9% reliability
+          - Acted as Squad Lead in agile development, managing requirement gathering, work allocation, and cross-vendor communication
 
       - title: Senior Software Engineer
         period: "Oct 2017 – Mar 2019"
         location: Gurugram, India
         highlights:
-          - Built RESTful APIs on Symfony3 with 40ms average response time
-          - Contributed to technical architecture decisions and full SDLC delivery
+          - Built RESTful APIs on Symfony3 with 40ms average response time, enabling seamless UI integration
+          - Contributed to technical architecture decisions and full SDLC delivery across concept, design, prototyping, implementation, testing, and deployment
 
   - company: GoldVIP Technology Solutions (Crown It)
     roles:
@@ -87,9 +95,9 @@ experience:
         location: Gurugram, India
         highlights:
           - Rebuilt mobile app backend in Node.js, improving performance by 300%
-          - Developed async data-processing middleware, reducing processing time by 70%
-          - Created in-house Communication Manager for targeted marketing, increasing campaign effectiveness by 45%
-          - Led AWS to Azure migration, improving cloud cost efficiency by 25%
+          - Developed async data-processing middleware in Node.js, reducing processing time by 70%
+          - Created in-house Communication Manager for targeted marketing across user segments, increasing campaign effectiveness by 45%
+          - Led migration from AWS to Microsoft Azure, improving cloud cost efficiency by 25%
 
   - company: FierceHound Media & Consulting
     roles:
@@ -98,6 +106,7 @@ experience:
         location: Gurugram, India
         highlights:
           - Developed web applications using PHP MVC frameworks (CakePHP, YII 2.0)
+          - Collaborated with stakeholders to analyze and refine functional requirements
 
   - company: Web Expert Online
     roles:
