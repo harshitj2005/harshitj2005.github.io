@@ -9,8 +9,8 @@ description: "How extracting a fragile third-party integration into a queue-back
 keywords: "queue-based microservice integration resilience, Azure Service Bus dead letter queue, NestJS microservice architecture, third-party API isolation pattern, async integration fault tolerance"
 canonical_url: "https://harshitj2005.github.io/posts/when-your-upstream-goes-down-queue-based-microservice/"
 image:
-  path: /assets/img/autodesk-integration-microservice-before-after-architecture.png
-  alt: "Before and after architecture: synchronous integration vs queue-backed microservice on Azure Service Bus"
+  path: /assets/img/autodesk-integration-depiction.png
+  alt: "Synchronous integration vs queue-backed microservice on Azure Service Bus"
 reading_time: "7 min read"
 ---
 
