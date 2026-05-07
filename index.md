@@ -1,6 +1,6 @@
 ---
 layout: home
-title: Home
+title: Harshit Jain
 description: >-
   Harshit Jain — Associate Principal Engineer specializing in distributed systems,
   GraphQL federation, and microservices architecture. 12+ years building systems

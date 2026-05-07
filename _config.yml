@@ -25,6 +25,8 @@ social:
 
 theme: jekyll-theme-chirpy
 
+lang: en
+
 # Timezone
 timezone: America/New_York
 
@@ -37,6 +39,8 @@ collections:
   tabs:
     output: true
     sort_by: order
+
+permalink: /posts/:title/
 
 defaults:
   - scope:

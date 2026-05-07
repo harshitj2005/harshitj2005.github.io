@@ -1,0 +1,13 @@
+<!-- charset shorthand form for SEO tool compatibility -->
+<meta charset="utf-8">
+
+<!-- twitter:description (jekyll-seo-tag omits it for website type pages) -->
+{% assign _desc = page.description | default: site.description %}
+{% if _desc %}
+<meta name="twitter:description" content="{{ _desc | strip_html | truncate: 200 }}">
+{% endif %}
+
+<!-- keywords meta tag -->
+{% if page.keywords %}
+<meta name="keywords" content="{{ page.keywords }}">
+{% endif %}
