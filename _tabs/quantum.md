@@ -8,8 +8,6 @@ description: >-
   and his Post-Graduate journey through the CEPQIP program at IIT Delhi.
 ---
 
-## Quantum
-
 Explorations in quantum computing, quantum-classical hybrid systems, and my journey through the CEPQIP program at IIT Delhi.
 
 ---

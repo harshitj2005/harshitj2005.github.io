@@ -9,8 +9,6 @@ description: >-
   distributed system design and engineering architecture.
 ---
 
-## AI
-
 Thoughts on AI integration in software systems, practical applications, and the evolving role of AI in engineering and architecture.
 
 ---

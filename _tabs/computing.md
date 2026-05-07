@@ -9,8 +9,6 @@ description: >-
   engineering craft.
 ---
 
-## Computing
-
 Deep dives into distributed systems, microservices architecture, API design, cloud infrastructure, and software engineering craft.
 
 ---

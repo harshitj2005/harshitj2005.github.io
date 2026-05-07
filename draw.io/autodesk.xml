@@ -1,0 +1,81 @@
+<mxfile host="app.diagrams.net">
+  <diagram id="k9T9ZkArH7ePoTRqG_uI" name="Page-1">
+    <mxGraphModel dx="1548" dy="1008" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" value="BEFORE: Synchronous Integration" vertex="1">
+          <mxGeometry height="30" width="340" x="180" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" value="AFTER: Queue-Backed Microservice" vertex="1">
+          <mxGeometry height="30" width="380" x="760" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="10" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" value="Main Application" vertex="1">
+          <mxGeometry height="60" width="200" x="80" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="11" parent="1" style="text;html=1;strokeColor=none;fillColor=#fff2cc;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=1;fontSize=11;" value="2-legged OAuth token&#xa;fetched at app bootstrap" vertex="1">
+          <mxGeometry height="40" width="220" x="80" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="11e" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="180" y="210" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="12" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" value="Autodesk Platform Services" vertex="1">
+          <mxGeometry height="60" width="200" x="420" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="13" edge="1" parent="1" source="10" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#b85450;fontColor=#b85450;fontSize=11;" target="12" value="Synchronous API call">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="14" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;fontStyle=1;" value="⚠ Autodesk down →&#xa;App fails to start" vertex="1">
+          <mxGeometry height="50" width="220" x="410" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="14e" edge="1" parent="1" source="12" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#b85450;strokeWidth=2;dashed=1;" target="14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="50" parent="1" style="line;strokeColor=#666666;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="380" width="10" x="720" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="20" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;fontStyle=1;" value="Main Application" vertex="1">
+          <mxGeometry height="60" width="200" x="690" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="21" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;fontStyle=1;" value="Azure Service Bus&#xa;(Queue)" vertex="1">
+          <mxGeometry height="60" width="200" x="1030" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="22" edge="1" parent="1" source="20" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#9673a6;fontColor=#9673a6;fontSize=11;" target="21" value="Publish message">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="23" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" value="NestJS Integration&#xa;Microservice" vertex="1">
+          <mxGeometry height="60" width="200" x="1010" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="24" edge="1" parent="1" source="21" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#82b366;fontColor=#82b366;fontSize=11;" target="23" value="Consume + retry&#xa;(linear backoff, 10x)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="25" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" value="Autodesk Platform Services" vertex="1">
+          <mxGeometry height="60" width="200" x="1330" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="26" edge="1" parent="1" source="23" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#82b366;fontSize=11;" target="25" value="API call (isolated)">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="27" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="Dead-Letter Queue&#xa;(replay after 24h)" vertex="1">
+          <mxGeometry height="55" width="200" x="1010" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="28" edge="1" parent="1" source="23" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#d6b656;fontColor=#d6b656;fontSize=11;dashed=1;" target="27" value="Exhausted retries">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="29" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" value="✓ Autodesk down →&#xa;Messages queue, drain on recovery&#xa;Main app unaffected" vertex="1">
+          <mxGeometry height="60" width="230" x="1315" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="29e" edge="1" parent="1" source="25" style="edgeStyle=orthogonalEdgeStyle;strokeColor=#82b366;" target="29">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="wzNjPsS93mxnZdWJjDCh-50" edge="1" parent="1" style="endArrow=none;html=1;rounded=0;" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <mxPoint x="660" y="630" as="sourcePoint" />
+            <mxPoint x="660" y="20" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

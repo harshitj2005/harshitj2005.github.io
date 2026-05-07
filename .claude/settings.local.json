@@ -3,7 +3,10 @@
     "allow": [
       "Bash(git init:*)",
       "Bash(brew install:*)",
-      "Bash(pdftotext:*)"
+      "Bash(pdftotext:*)",
+      "Bash(bundle exec:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebSearch"
     ],
     "deny": [
       "Bash(git commit*)",
