@@ -7,7 +7,7 @@ categories: [Software Architecture, Distributed Systems, Computing]
 tags: [azure-service-bus, nestjs, microservices, queue-based-architecture, integration-resilience]
 description: "How extracting a fragile third-party integration into a queue-backed NestJS microservice eliminated upstream outages as a source of application downtime."
 keywords: "queue-based microservice integration resilience, Azure Service Bus dead letter queue, NestJS microservice architecture, third-party API isolation pattern, async integration fault tolerance"
-canonical_url: "https://harshitj2005.github.io/posts/when-your-upstream-goes-down-queue-based-microservice/"
+canonical_url: "https://harshitjain.io/posts/when-your-upstream-goes-down-queue-based-microservice/"
 image:
   path: /assets/img/autodesk-integration-depiction.png
   alt: "Synchronous integration vs queue-backed microservice on Azure Service Bus"

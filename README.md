@@ -1,8 +1,8 @@
-# harshitj2005.github.io
+# harshitjain.io
 
 Personal website and technical blog of **Harshit Jain** — Associate Principal Engineer specializing in distributed systems, GraphQL federation, and microservices architecture.
 
-Live at → **[harshitj2005.github.io](https://harshitj2005.github.io)**
+Live at → **[harshitjain.io](https://harshitjain.io)**
 
 ---
 

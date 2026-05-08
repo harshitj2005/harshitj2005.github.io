@@ -88,8 +88,8 @@ Joined as Senior Software Engineer with a mandate to stabilize and scale a consu
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Harshit Jain",
-  "url": "https://harshitj2005.github.io/about/",
-  "image": "https://harshitj2005.github.io/assets/img/avatar.jpg",
+  "url": "https://harshitjain.io/about/",
+  "image": "https://harshitjain.io/assets/img/avatar.jpg",
   "email": "Harshitj2005@gmail.com",
   "jobTitle": "Associate Principal Engineer",
   "worksFor": {

@@ -6,7 +6,7 @@ description: >-
   at Nagarro, specializing in distributed systems, microservices architecture, and
   scalable GraphQL APIs.
 
-url: "https://harshitj2005.github.io"
+url: "https://harshitjain.io"
 baseurl: ""
 
 github:
@@ -17,7 +17,7 @@ avatar: /assets/img/avatar.jpg
 author:
   name: Harshit Jain
   email: Harshitj2005@gmail.com
-  url: https://harshitj2005.github.io
+  url: https://harshitjain.io
 
 plugins:
   - jekyll-sitemap
