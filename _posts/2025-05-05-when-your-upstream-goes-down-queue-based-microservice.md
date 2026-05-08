@@ -13,9 +13,6 @@ image:
   alt: "Synchronous integration vs queue-backed microservice on Azure Service Bus"
 reading_time: "7 min read"
 ---
-
-<small>*Ideation and creation by human, written and formatted by AI*</small>
-
 ---
 
 ## The Problem With Synchronous Integration at the Application Boundary
@@ -95,3 +92,4 @@ The architectural shift also produced a secondary benefit that was not part of t
 *Harshit is a Senior Software Architect with a decade of experience in enterprise-scale distributed systems. This post reflects work done in production environments.*
 
 ---
+<small>*Ideation and creation by human, written and formatted by AI*</small>
