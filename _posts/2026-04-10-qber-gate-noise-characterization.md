@@ -7,7 +7,7 @@ categories: [Quantum Computing, Quantum Communications,Quantum]
 tags: [qiskit, QBER, quantum-noise, depolarizing, phase-flip, quantum-simulation]
 description: "A systematic sweep of QBER across four quantum gates, two noise models, and two circuit topologies — and what the results revealed about measurement basis and noise sensitivity."
 keywords: "quantum bit error rate, QBER, depolarizing noise, phase flip noise, Qiskit noise simulation, quantum gate noise characterization"
-canonical_url: "https://harshitjain.io/posts/qber-gate-noise-characterization"
+canonical_url: "https://harshitjain.io/posts/qber-gate-noise-characterization/"
 image:
   path: /assets/img/qber/qber-u-gate-1qubit-1024shots.png
   alt: "QBER vs noise strength for U gate — depolarizing and phase-flip noise curves"
@@ -114,7 +114,7 @@ The practical guideline I'm taking forward: when comparing two conditions (topol
 
 ---
 
-*Harshit is pursuing a Post-Graduate Diploma in Advanced Communication Engineering with Quantum and AI Integration at IIT Delhi, alongside his work as a Senior Software Architect. This post reflects independent simulation work done as part of that programme.*
+*Harshit is an Associate Principal Engineer pursuing the Post-Graduate Diploma in Advanced Communication Engineering with Quantum and AI Integration at IIT Delhi. This post reflects independent simulation work done as part of that programme.*
 
 ---
 

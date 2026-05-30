@@ -7,8 +7,10 @@ categories: [Quantum Computing, Wireless Communications,Quantum]
 tags: [qiskit, diversity-combining, rayleigh-fading, quantum-simulation, BER]
 description: "How I used Qiskit quantum circuits to simulate SC, EGC, and MRC diversity combining over Rayleigh fading channels — and what the results revealed."
 keywords: "quantum circuit diversity combining simulation, qiskit rayleigh fading, SC EGC MRC quantum, QBER qiskit, quantum wireless simulation"
-canonical_url: "https://harshitjain.io/posts/quantum-diversity-combining-simulation"
-image: "/assets/img/quantum-diversity-combining/part_a_technique_comparison.png"
+canonical_url: "https://harshitjain.io/posts/quantum-diversity-combining/"
+image:
+  path: /assets/img/quantum-diversity-combining/part_a_technique_comparison.png
+  alt: "SC, EGC, and MRC diversity combining technique comparison using Qiskit quantum circuits"
 reading_time: "8 min read"
 ---
 
@@ -89,7 +91,7 @@ The full [Qiskit Aer noise modeling documentation](https://docs.quantum.ibm.com/
 
 ---
 
-*Harshit is a Senior Software Architect with a decade of experience in enterprise-scale distributed systems, currently pursuing the Post-Graduate Diploma in Advanced Communication Engineering with Quantum and AI Integration at IIT Delhi (CEPQIP). This post documents lab work from that programme.*
+*Harshit is an Associate Principal Engineer with a decade of experience in enterprise-scale distributed systems, currently pursuing the Post-Graduate Diploma in Advanced Communication Engineering with Quantum and AI Integration at IIT Delhi (CEPQIP). This post documents lab work from that programme.*
 
 ---
 <small>*Ideation and creation by human, written and formatted by AI*</small>

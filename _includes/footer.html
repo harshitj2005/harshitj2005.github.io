@@ -9,6 +9,42 @@
   }
 </style>
 
+{% if page.layout == 'post' %}
+{% assign _post_url = page.url | absolute_url %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    }{% if page.categories.size > 0 %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.categories.first | jsonify }},
+      "item": "{{ site.url }}/{{ page.categories.first | downcase | replace: ' ', '-' }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ _post_url }}"
+    }{% else %},
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": {{ page.title | jsonify }},
+      "item": "{{ _post_url }}"
+    }{% endif %}
+  ]
+}
+</script>
+{% endif %}
+
 <!-- The Footer -->
 
 <footer

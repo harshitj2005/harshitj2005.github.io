@@ -89,7 +89,7 @@ The architectural shift also produced a secondary benefit that was not part of t
 
 ---
 
-*Harshit is a Senior Software Architect with a decade of experience in enterprise-scale distributed systems. This post reflects work done in production environments.*
+*Harshit is an Associate Principal Engineer with a decade of experience in enterprise-scale distributed systems. This post reflects work done in production environments.*
 
 ---
 <small>*Ideation and creation by human, written and formatted by AI*</small>

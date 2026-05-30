@@ -7,8 +7,10 @@ categories: [Software Architecture, Integration Engineering, Computing]
 tags: [enterprise-integration, event-driven-architecture, mulesoft, salesforce, idempotency]
 description: "How I defended a production-hardened internal integration service against a third-party iPaaS platform — and why the architecture decision came down to failure surface, not features."
 keywords: "enterprise integration architecture decision, event-driven integration, MuleSoft Salesforce integration, iPaaS evaluation, idempotency design"
-canonical_url: "https://harshitjain.io/posts/defend-what-you-built-architecture-decision"
-image: "/assets/img/defend-what-you-built-title.png"
+canonical_url: "https://harshitjain.io/posts/defend-what-you-built-architecture-decision/"
+image:
+  path: /assets/img/defend-what-you-built-title.png
+  alt: "Architecture decision comparison: internal integration service vs third-party iPaaS platform"
 reading_time: "10 min read"
 ---
  
@@ -133,7 +135,7 @@ For engineers who are new to a team and need to build credibility quickly: a for
 - **A risk register is a credibility artifact, not just a planning tool.** When you are new to a room, naming failure modes before others raise them demonstrates exactly the kind of thinking that earns trust faster than any amount of confidence signalling.
 ---
 
-*Harshit is a Senior Software Architect with a decade of experience in enterprise-scale distributed systems. This post reflects work done in production environments.*
+*Harshit is an Associate Principal Engineer with a decade of experience in enterprise-scale distributed systems. This post reflects work done in production environments.*
 
 ---
 <small>*Ideation and creation by human, written and formatted by AI*</small>
