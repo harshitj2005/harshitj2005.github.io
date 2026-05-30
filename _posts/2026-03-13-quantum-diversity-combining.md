@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Simulating Classical Diversity Combining with Quantum Circuits"
-date: 2026-05-30
+date: 2026-03-13
 author: harshit
 categories: [Quantum Computing, Wireless Communications,Quantum]
 tags: [qiskit, diversity-combining, rayleigh-fading, quantum-simulation, BER]
