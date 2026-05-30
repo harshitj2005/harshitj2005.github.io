@@ -44,6 +44,10 @@ social:
 
 theme: jekyll-theme-chirpy
 
+analytics:
+  google:
+    id: G-4BPQ0QLNK1
+
 lang: en
 
 # Timezone
