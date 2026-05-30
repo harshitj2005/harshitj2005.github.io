@@ -3,7 +3,7 @@ layout: post
 title: "Simulating Classical Diversity Combining with Quantum Circuits"
 date: 2026-05-30
 author: harshit
-categories: [Quantum Computing, Wireless Communications]
+categories: [Quantum Computing, Wireless Communications,Quantum]
 tags: [qiskit, diversity-combining, rayleigh-fading, quantum-simulation, BER]
 description: "How I used Qiskit quantum circuits to simulate SC, EGC, and MRC diversity combining over Rayleigh fading channels — and what the results revealed."
 keywords: "quantum circuit diversity combining simulation, qiskit rayleigh fading, SC EGC MRC quantum, QBER qiskit, quantum wireless simulation"
