@@ -2,8 +2,9 @@
 layout: post
 title: "Defend What You Built: Winning an Architecture Decision as the New Person"
 date: 2026-05-14
+last_modified_at: 2026-06-19
 author: harshit
-categories: [Software Architecture, Integration Engineering, Computing]
+categories: [Computing]
 tags: [enterprise-integration, event-driven-architecture, mulesoft, salesforce, idempotency]
 description: "How I defended a production-hardened internal integration service against a third-party iPaaS platform — and why the architecture decision came down to failure surface, not features."
 keywords: "enterprise integration architecture decision, event-driven integration, MuleSoft Salesforce integration, iPaaS evaluation, idempotency design"

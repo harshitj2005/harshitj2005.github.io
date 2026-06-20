@@ -2,8 +2,9 @@
 layout: post
 title: "Quantum Bit Error Rate: Gate-by-Gate Noise Characterization"
 date: 2026-04-10
+last_modified_at: 2026-06-19
 author: harshit
-categories: [Quantum Computing, Quantum Communications,Quantum]
+categories: [Quantum]
 tags: [qiskit, QBER, quantum-noise, depolarizing, phase-flip, quantum-simulation]
 description: "A systematic sweep of QBER across four quantum gates, two noise models, and two circuit topologies — and what the results revealed about measurement basis and noise sensitivity."
 keywords: "quantum bit error rate, QBER, depolarizing noise, phase flip noise, Qiskit noise simulation, quantum gate noise characterization"
