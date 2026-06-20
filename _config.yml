@@ -2,9 +2,10 @@
 title: Harshit Jain
 tagline: Associate Principal Engineer · GraphQL · Microservices · Node.js
 description: >-
-  Personal site and technical blog of Harshit Jain — Associate Principal Engineer
-  at Nagarro, specializing in distributed systems, microservices architecture, and
-  scalable GraphQL APIs.
+  Technical writing and original analysis by Harshit Jain — Associate Principal Engineer
+  with 12+ years building distributed systems, GraphQL federation, and microservices at scale.
+  Published work covers production architecture patterns, quantum computing research, and
+  AI integration in enterprise systems.
 
 url: "https://harshitjain.io"
 baseurl: ""
@@ -37,7 +38,7 @@ social:
   name: Harshit Jain
   email: Harshitj2005@gmail.com
   links:
-    - https://linkedin.com/in/harshitj2005
+    - https://www.linkedin.com/in/harshitj2005/
     - https://github.com/harshitj2005
 
 theme: jekyll-theme-chirpy

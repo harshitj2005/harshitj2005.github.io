@@ -80,7 +80,7 @@ Joined as Senior Software Engineer with a mandate to stabilize and scale a consu
 ### Get In Touch
 
 - **Email:** [Harshitj2005@gmail.com](mailto:Harshitj2005@gmail.com)
-- **LinkedIn:** [linkedin.com/in/harshitj2005](https://linkedin.com/in/harshitj2005)
+- **LinkedIn:** <a href="https://www.linkedin.com/in/harshitj2005/" rel="me">linkedin.com/in/harshitj2005</a>
 - **Phone:** +1-484-536-9012
 
 <script type="application/ld+json">
@@ -134,7 +134,7 @@ Joined as Senior Software Engineer with a mandate to stabilize and scale a consu
     }
   ],
   "sameAs": [
-    "https://linkedin.com/in/harshitj2005",
+    "https://www.linkedin.com/in/harshitj2005/",
     "https://github.com/harshitj2005"
   ]
 }
