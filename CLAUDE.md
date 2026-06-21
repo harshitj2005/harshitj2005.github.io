@@ -3,6 +3,10 @@
 > **For Claude:** Read this file fully at the start of every session. After completing
 > any significant work, update the relevant sections so this file stays accurate.
 > Never let this file go stale — it is the single source of truth for this project.
+>
+> **Related file:** `blog-post-instructions.md` (repo root) — full instructions for the
+> blog post writing collaborator Claude Project. When helping write a new post, read that
+> file. When post structure or front matter rules change, update both files.
 
 ---
 
@@ -269,6 +273,41 @@ SSL is managed by GitHub Pages. Both http:// and https:// work (http redirects t
 
 **Workflow file:** `.github/workflows/pages.yml`  
 Uses: Ruby 3.3, `bundle install`, `JEKYLL_ENV=production jekyll build`, `actions/deploy-pages@v4`
+
+---
+
+## Blog Post Writing Rules (Summary)
+
+Full instructions are in `blog-post-instructions.md`. Key rules for site-maintenance context:
+
+**Categories — single value only.**
+Posts must carry exactly ONE category from: `Computing`, `Quantum`, or `AI`.
+Never add secondary categories. Every extra category value creates a new jekyll-archives
+page that pollutes GSC coverage and dilutes crawl budget (confirmed and fixed June 2026).
+
+**Canonical URL — trailing slash required.**
+Pattern: `https://harshitjain.io/posts/[filename-slug]/`
+Slug = filename minus the `YYYY-MM-DD-` date prefix and `.md` extension, verbatim.
+
+**Image front matter — object form only.**
+```yaml
+image:
+  path: /assets/img/filename.png
+  alt: "Descriptive alt text"
+```
+Never `image: "/assets/img/filename.png"` (string form breaks hero rendering and og:image).
+
+**Author field — required, exact case.**
+`author: harshit` (lowercase, no quotes) — resolves via `_data/authors.yml` to feed BlogPosting schema.
+
+**`last_modified_at:` — required on every post.**
+Set to publish date initially. Update when post is revised. Populates `dateModified` in schema.
+
+**"Personal blog" framing — prohibited.**
+Never write copy that frames this site or its posts as a personal blog, hobby writing, or
+personal account. Framing must be: published technical analysis, expert writing, original
+contribution. AI search models (Gemini, etc.) reflect site description language verbatim —
+"personal blog" in any copy weakens EB-1A evidence value.
 
 ---
 
