@@ -1,0 +1,60 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="size-gated-transport" id="sizegate">
+    <mxGraphModel dx="1652" dy="718" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="file" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="Incoming file&#xa;+ metadata" vertex="1">
+          <mxGeometry height="60" width="150" x="40" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="gate" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;" value="Size &gt; 50 MB?" vertex="1">
+          <mxGeometry height="80" width="140" x="260" y="310" as="geometry" />
+        </mxCell>
+        <mxCell id="inline" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="Encode payload&#xa;base64 (inline)" vertex="1">
+          <mxGeometry height="60" width="160" x="490" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="blob" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="Store file in&#xa;Blob storage" vertex="1">
+          <mxGeometry height="60" width="160" x="490" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="url" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="Embed time-limited&#xa;signed URL in message" vertex="1">
+          <mxGeometry height="60" width="190" x="706" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="queue" parent="1" style="shape=cylinder3;boundedLbl=1;backgroundOutline=1;direction=south;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;" value="Azure Service Bus&#xa;queue" vertex="1">
+          <mxGeometry height="90" width="150" x="986" y="305" as="geometry" />
+        </mxCell>
+        <mxCell id="consumer" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;align=left;spacingLeft=8;" value="Consumer service&#xa;&#xa;≤50 MB: decode inline&#xa;&gt;50 MB: stream blob → out&#xa;(no full-file buffer)" vertex="1">
+          <mxGeometry height="110" width="190" x="1176" y="295" as="geometry" />
+        </mxCell>
+        <mxCell id="downstream" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=13;" value="Downstream&#xa;document system" vertex="1">
+          <mxGeometry height="60" width="160" x="1420" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="file" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="gate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=12;" target="inline" value="No · ≤50 MB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="gate" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=12;" target="blob" value="Yes · &gt;50 MB">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="blob" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="url">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="inline" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=12;" target="queue" value="payload inline">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="url" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;fontSize=12;" target="queue" value="URL reference">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="queue" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;" target="consumer">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="consumer" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="downstream">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1416" y="350" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
