@@ -1,0 +1,82 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="judgment-across-lifecycle" id="judgmap">
+    <mxGraphModel dx="1755" dy="763" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="780" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;fontSize=16;fontStyle=1;" value="Where judgment is load-bearing across an agentic coding workflow" vertex="1">
+          <mxGeometry height="30" width="1360" x="120" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="s1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;" value="Context&#xa;engineering" vertex="1">
+          <mxGeometry height="90" width="190" x="120" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s1l" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#9a6a00;" value="HUMAN" vertex="1">
+          <mxGeometry height="20" width="190" x="120" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="s2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="Planning &amp;&#xa;research" vertex="1">
+          <mxGeometry height="90" width="190" x="350" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s2l" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#5e8a4f;" value="TOOL" vertex="1">
+          <mxGeometry height="20" width="190" x="350" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="s3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;" value="Architecture&#xa;decisions" vertex="1">
+          <mxGeometry height="90" width="190" x="580" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s3l" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#9a6a00;" value="HUMAN" vertex="1">
+          <mxGeometry height="20" width="190" x="580" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="s4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#d79b00;strokeWidth=3;fontSize=13;" value="Govern the plan&#xa;(adversarial review)" vertex="1">
+          <mxGeometry height="90" width="190" x="810" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s4l" parent="1" style="text;html=1;align=center;fontSize=11;fontStyle=1;fontColor=#9a6a00;" value="TOOL runs · HUMAN decides" vertex="1">
+          <mxGeometry height="20" width="210" x="800" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="s5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;" value="Build &amp;&#xa;execute" vertex="1">
+          <mxGeometry height="90" width="190" x="1040" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s5l" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#5e8a4f;" value="TOOL" vertex="1">
+          <mxGeometry height="20" width="190" x="1040" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="s6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=13;fontStyle=1;" value="Turbulence &amp;&#xa;recovery" vertex="1">
+          <mxGeometry height="90" width="190" x="1270" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="s6l" parent="1" style="text;html=1;align=center;fontSize=12;fontStyle=1;fontColor=#9a6a00;" value="HUMAN" vertex="1">
+          <mxGeometry height="20" width="190" x="1270" y="255" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" edge="1" parent="1" source="s1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="s2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" edge="1" parent="1" source="s2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="s3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" edge="1" parent="1" source="s3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="s4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a4" edge="1" parent="1" source="s4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="s5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="a5" edge="1" parent="1" source="s5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=classic;" target="s6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="band" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;dashed=1;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="130" width="210" x="110" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="band2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#d79b00;dashed=1;strokeWidth=2;" value="" vertex="1">
+          <mxGeometry height="130" width="210" x="1260" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="bandtext" parent="1" style="text;html=1;align=center;fontSize=13;fontStyle=2;fontColor=#444444;" value="Judgment clusters at the ends — and at the architecture layer.&#xa;The tool owns the executional middle." vertex="1">
+          <mxGeometry height="50" width="880" x="350" y="360" as="geometry" />
+        </mxCell>
+        <mxCell id="lg1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" value="Human-decided" vertex="1">
+          <mxGeometry height="40" width="150" x="560" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="lg2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Tool-executed" vertex="1">
+          <mxGeometry height="40" width="150" x="730" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="lg3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#d79b00;strokeWidth=3;fontSize=12;" value="Tool runs, human decides" vertex="1">
+          <mxGeometry height="40" width="190" x="900" y="450" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
