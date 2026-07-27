@@ -8,6 +8,7 @@ Resume:work exp/
 
 # Local/private project context and working material — never commit.
 .claude/
+.agents/
 claude/
 seo-notes/
 uncommited/

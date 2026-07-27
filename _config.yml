@@ -78,6 +78,8 @@ defaults:
     values:
       layout: page
       permalink: /:title/
+      seo:
+        type: WebPage
 
 exclude:
   - "*.gem"

@@ -1,0 +1,7 @@
+# Custom tab labels are merged with Chirpy's English locale data.
+# Chirpy uses this map for HTML <title> values on tab collection pages.
+tabs:
+  resume: Resume
+  computing: Computing
+  quantum: Quantum
+  ai: AI

@@ -79,10 +79,11 @@ Important configuration:
 _config.yml                 Site configuration
 _layouts/home.html          Custom homepage and Person JSON-LD
 _includes/footer.html       Global footer override and image CSS
-_includes/customize-head.html
-                            Dead hook in the deployed Chirpy version; do not use
+_includes/metadata-hook.html
+                            Per-page metadata hook and post BreadcrumbList
 _includes/resume-section.html
                             Resume rendering partial
+_data/locales/en.yml        Custom Chirpy tab labels used in HTML titles
 _tabs/                      About, Resume, Computing, Quantum, and AI pages
 _posts/                     Published articles
 _data/authors.yml           Post author mapping
@@ -164,19 +165,20 @@ Rules:
   `https://www.linkedin.com/in/harshitj2005/`.
 - Google Analytics must remain configured only through `_config.yml`.
 
-## Known theme and rendering issues
+## Theme and rendering safeguards
 
-1. `_includes/customize-head.html` does not render in the deployed Chirpy version.
-2. `_includes/footer.html` is pulled through a cached include. Page-dependent Liquid placed
-   there freezes and can leak one page's values across the site.
-3. The current BreadcrumbList block in `footer.html` is therefore incorrect on live pages.
-   Remove it before adding a replacement through a verified non-cached per-page hook.
-4. `/resume/`, `/computing/`, `/quantum/`, and `/ai/` currently render
-   `<title> | Harshit Jain</title>`.
-5. Those non-post pages also receive inappropriate BlogPosting structured data.
-6. Category archives must remain disabled; custom tab pages serve as category landing pages.
-7. The `github-pages` gem must not be added because it pins an incompatible Jekyll version.
-8. GitHub Pages source must remain set to GitHub Actions, not Deploy from branch.
+1. Chirpy resolves tab `<title>` values through locale data. Keep custom tab labels in
+   `_data/locales/en.yml`; missing labels produce blank title prefixes.
+2. Documents in the `tabs` collection receive `seo.type: WebPage` through `_config.yml`.
+   Without that override, their generated dates cause jekyll-seo-tag to classify them as
+   BlogPosting.
+3. Post BreadcrumbList JSON-LD belongs in `_includes/metadata-hook.html`, which renders once
+   per page. Do not move page-dependent Liquid into `_includes/footer.html`; Chirpy caches the
+   footer and can leak one page's values across the site.
+4. `_includes/customize-head.html` is not a Chirpy 7.6 metadata hook. Do not recreate it.
+5. Category archives must remain disabled; custom tab pages serve as category landing pages.
+6. The `github-pages` gem must not be added because it pins an incompatible Jekyll version.
+7. GitHub Pages source must remain set to GitHub Actions, not Deploy from branch.
 
 Validate rendered and live output rather than trusting source configuration alone.
 
@@ -198,14 +200,13 @@ seconds, then verify the workflow and live pages.
 
 ## Current priorities
 
-1. Fix blank titles and incorrect structured data on non-post pages.
-2. Remove the frozen BreadcrumbList and reintroduce it through a verified per-page hook.
-3. Align `README.md` and `blog-post-instructions.md` with the six-post inventory.
-4. Improve internal links from the homepage, About page, and related articles.
-5. Review sensitive filenames, public claims, and contact information.
-6. Bring three long titles and three off-target descriptions into current editorial ranges
+1. Deploy and live-verify the non-post title and structured-data fixes.
+2. Align `README.md` with the current site structure and six-post inventory.
+3. Improve internal links from the homepage, About page, and related articles.
+4. Review sensitive filenames, public claims, and contact information.
+5. Bring three long titles and three off-target descriptions into current editorial ranges
    without changing established slugs.
-7. Continue a sustainable publishing cadence across Computing, Quantum, and AI.
+6. Continue a sustainable publishing cadence across Computing, Quantum, and AI.
 
 ## Documentation update rules
 
@@ -217,4 +218,3 @@ After meaningful work:
 4. Append the dated work and decision record to `.claude/PROJECT_TIMELINE.md`.
 5. Update `.claude/PROJECT_CONTEXT.md` only when private current state or strategy changes.
 6. Before handoff, scan tracked files to ensure private local context has not leaked.
-

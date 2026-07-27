@@ -1,0 +1,42 @@
+{% comment %}
+  Chirpy includes this hook once per rendered page. Keep page-dependent metadata
+  here instead of cached includes such as footer.html.
+{% endcomment %}
+
+{% if page.layout == 'post' %}
+  {% assign post_url = page.url | absolute_url %}
+  {% assign category_name = page.categories.first %}
+  {% assign category_url = category_name | downcase | replace: ' ', '-' | prepend: '/' | append: '/' | absolute_url %}
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": {{ "/" | absolute_url | jsonify }}
+        }{% if category_name %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ category_name | jsonify }},
+          "item": {{ category_url | jsonify }}
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": {{ page.title | jsonify }},
+          "item": {{ post_url | jsonify }}
+        }{% else %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": {{ page.title | jsonify }},
+          "item": {{ post_url | jsonify }}
+        }{% endif %}
+      ]
+    }
+  </script>
+{% endif %}
