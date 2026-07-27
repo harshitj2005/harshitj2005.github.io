@@ -5,6 +5,9 @@ vendor/
 Gemfile.lock
 .DS_Store
 Resume:work exp/
-.claude*
-seo-notes
+
+# Local/private project context and working material — never commit.
+.claude/
 claude/
+seo-notes/
+uncommited/
