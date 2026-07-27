@@ -136,6 +136,10 @@ All posts have `categories:` restricted to **one of: Computing, Quantum, AI** �
 | `2026-03-13-quantum-diversity-combining.md` | `/posts/quantum-diversity-combining/` | Quantum | Live |
 | `2026-04-10-qber-gate-noise-characterization.md` | `/posts/qber-gate-noise-characterization/` | Quantum | Live |
 | `2026-05-14-defend-what-you-built-architecture-decision.md` | `/posts/defend-what-you-built-architecture-decision/` | Computing | Live |
+| `2026-06-27-agentic-coding-workflow-judgment.md` | `/posts/agentic-coding-workflow-judgment/` | AI | Live |
+| `2026-06-27-message-queue-file-size-ceiling.md` | `/posts/message-queue-file-size-ceiling/` | Computing | Live |
+
+**Post counts (as of 2026-06-27 audit):** 6 posts total — Computing × 3, Quantum × 2, AI × 1. The AI category is **no longer empty** (filled by the agentic-coding post). The two June-27 posts cross-link each other and an existing post; the four older posts are nearly orphaned (low internal-link density — see What's Left).
 
 **When adding new posts:** filename slug = URL slug. `canonical_url` must match exactly, with trailing slash.
 
@@ -176,7 +180,7 @@ toc: true
 | Schema | Where it renders | How |
 |--------|-----------------|-----|
 | BlogPosting | Every post page `<head>` | jekyll-seo-tag generates it natively from post front matter |
-| BreadcrumbList | Every post page (body, before `<footer>`) | `_includes/footer.html`, conditional on `page.layout == 'post'` |
+| BreadcrumbList | ⚠️ BROKEN on live site (2026-06-27) | Source in `_includes/footer.html` is correct but frozen by Chirpy's cached include — emits the same wrong breadcrumb on every page. See Gotcha #10. Needs re-injection via a non-cached per-page hook. |
 | Person | /about/ | Hardcoded in `_tabs/about.md` body |
 | Person | Homepage | `_layouts/home.html` |
 
@@ -187,7 +191,9 @@ toc: true
 
 ## Known Gotchas — Do Not Repeat These Mistakes
 
-1. **`_includes/customize-head.html` does NOT inject into `<head>`** in this Chirpy gem version. Confirmed by live page inspection. Any code placed there is dead. Use `_includes/footer.html` for global injections instead.
+1. **`_includes/customize-head.html` does NOT inject into `<head>`** in this Chirpy gem version. Confirmed by live page inspection. Any code placed there is dead. ⚠️ **CORRECTION (2026-06-27 audit):** the old advice here — "use `_includes/footer.html` for global injections instead" — was WRONG for anything that depends on per-page variables. `footer.html` is pulled in through Chirpy's **cached include**, so its output is rendered ONCE and frozen across the whole site. `footer.html` is fine for truly global, page-independent content (e.g. the image CSS), but NOT for per-page `page.*` Liquid. See Gotcha #10.
+
+10. **Per-page JSON-LD in `footer.html` is BROKEN by Chirpy's cached include.** Discovered in the 2026-06-27 audit: the BreadcrumbList block in `footer.html`, although its Liquid source is correct (`{{ page.title | jsonify }}`, `{{ page.categories.first }}`, guarded by `{% if page.layout == 'post' %}`), renders **byte-identical on every page** — always naming the OLDEST post (`site.posts.last` = "When Your Upstream Goes Down…", category Computing) — and it even appears on non-post pages like `/about/` and the home page. Root cause: Chirpy includes `footer.html` via a cached include, freezing the per-page Liquid (and the post-layout guard) at first render. **Verify with:** `curl -s https://harshitjain.io/about/ | grep -c BreadcrumbList` (should be 0; if 1, the cache bug is live). **Fix path (must be build-verified):** remove the breadcrumb from `footer.html` first (a wrong breadcrumb on every post is worse than none for EB-1A schema validation), then re-inject through a non-cached per-page hook (a thin `_layouts/post.html` wrapper, or a confirmed-firing head hook) — but do NOT trust any replacement until a real build/deploy confirms it differs per post and is absent on non-posts, because a cached replacement would reintroduce the same false data. The gem is not installed locally, so verification happens via curl against the deployed site.
 
 2. **Category archives must stay disabled.** jekyll-archives was generating spurious thin pages (`/categories/distributed-systems/`, `/categories/quantum-communications/`, etc.) from over-categorized posts. These hurt GSC indexing. Categories are now disabled in archives config; only `[tags]` is enabled. Custom tab pages (`/computing/`, `/quantum/`, `/ai/`) serve the category landing page function.
 
@@ -230,16 +236,19 @@ All `sameAs` and `rel="me"` links use: `https://www.linkedin.com/in/harshitj2005
 
 ---
 
-## SEO Status (as of June 2026)
+## SEO Status (as of 2026-06-27 audit)
 
-- **sitemap.xml** — live at harshitjain.io/sitemap.xml
+- **sitemap.xml** — live at harshitjain.io/sitemap.xml; both new posts present; no `/categories/` archive URLs (clean).
 - **robots.txt** — correct, includes Sitemap directive
-- **GSC** — site submitted; ~16 pages indexed as of June 2026; 18 still in "Discovered - not indexed" queue (normal for new site)
-- **GSC URL Inspection** — use for manually requesting indexing of new posts
+- **GSC Performance (3-month window to 2026-06-27)** — **1 click, 104 impressions, ~0.96% CTR, avg position ~8.7.** Impressions ramped ~5× in the final week (3/day → 16/day on Jun 25); first-ever click Jun 25. `/about/` (50 impr, the only click) + home (22) = ~69% of impressions → site ranks for the *person*, barely the content. Posts with impressions: qber (12, pos ~11), defend (5, pos 8), quantum-diversity (1, pos 34). ZERO impressions: the oldest "upstream" post + both new posts.
+- **GSC Coverage** — **19 indexed** (grew from 2 over the window), **18 Discovered – not indexed** (normal crawl-budget throttling for a new low-authority site), 1 Crawled-not-indexed, 1 Page-with-redirect.
+- **⚠️ Stale `/categories/quantum-computing/`** still draws impressions (pos ~2) despite categories being disabled — likely the "Page with redirect" issue. Kill it (confirm 404/redirect to `/quantum/`) and submit a GSC Removal.
+- **⚠️ Tag pages outrank posts** — `/tags/quantum-simulation/` (pos 5) beats the qber post it points to. Thin auto-pages outranking authored evidence is bad for EB-1A.
+- **Quantum is the strongest cluster** — qber at pos ~11 is one push from page 1; "gate bits" query at pos 33 shows latent demand.
 - **GA** — tracking active via native Chirpy analytics config
-- **Canonical URLs** — verified correct on all four posts with trailing slashes
-- **BreadcrumbList** — rendering on all posts via footer.html
-- **BlogPosting** — rendering on all posts via jekyll-seo-tag
+- **Canonical URLs** — verified correct on all six posts with trailing slashes (live-verified)
+- **BlogPosting** — rendering on all posts via jekyll-seo-tag (`author.name = "Harshit Jain"`; lacks `jobTitle`/`worksFor` — enrich `authors.yml`)
+- **BreadcrumbList** — ⚠️ **BROKEN on live site** (see Gotcha #10) — top fix priority.
 
 **Netskope:** Corporate firewall tool. Submit harshitjain.io for recategorization at netskope.com/netskope-one/urlcheck, Symantec WebPulse, and Zscaler if blocked on corporate networks.
 
@@ -313,14 +322,33 @@ contribution. AI search models (Gemini, etc.) reflect site description language 
 
 ## What's Left / Future Work
 
-- **Cross-posting:** Publish all 4 posts to Medium and Dev.to with canonical URLs set. Share on LinkedIn with engagement.
-- **More posts:** Target: 2 posts per month. Alternate between Computing and Quantum/AI categories.
-- **Wayback Machine:** Submit each post URL manually to web.archive.org/save for archival timestamping (EB-1A evidence).
-- **GSC re-check:** Verify all 4 posts move from "Discovered" to "Indexed" within 2 weeks of June 2026 changes.
-- **LinkedIn website field:** Confirm harshitjain.io is set in LinkedIn profile Contact Info → Website (completes bidirectional identity graph).
-- **Schema validation:** Run validator.schema.org on all 4 posts after June 2026 build to confirm BreadcrumbList now renders.
-- **Evidence package:** Begin compiling attorney documentation using the checklist above.
-- **AI category posts:** No posts yet in the AI category. The /ai/ tab exists but is empty.
+> Full prioritized findings from the 2026-06-27 multi-agent audit are saved at `seo-notes/audits/audit-2026-06-27.md`. Re-run with the `blog-audit` skill.
+
+**🔴 Critical (fix before next EB-1A evidence capture)**
+- **Breadcrumb structured data is false on every page** (Gotcha #10). Top priority. Remove from `footer.html`; re-inject via a non-cached per-page hook; build/curl-verify.
+- **Vendor name leaks in image filenames** — `assets/img/autodesk-integration-depiction.png` and `assets/img/autodesk-integration-microservice-before-after-architecture.png` (referenced by the "upstream" post). Body is genericized but the public asset URLs (and og:image) leak the client. Rename to generic slugs + update references.
+- **"upstream" post body image** uses a relative `./assets/img/` path and is missing `{: width height}` — likely renders broken. Fix path to absolute + add dimensions.
+
+**🟠 Major**
+- **Delete dead `_includes/customize-head.html`** (latent duplicate-schema landmine), but first harvest its richer author data: enrich the single BlogPosting (via `_data/authors.yml`) with `jobTitle: Associate Principal Engineer` + `worksFor: Nagarro`. Never run two BlogPosting emitters.
+- **`toc: true` missing** on the 4 older posts (only the 2 June-27 posts have it). Add it.
+- **Titles over 60 chars:** "upstream" (96), "defend-what-you-built" (73), "quantum-diversity" (62). Trim.
+- **Descriptions out of 150–160:** qber (177), defend (182) over; quantum-diversity (146) under. Fix qber first (best-ranking post).
+- **Internal linking / orphaned posts:** add contextual links from `/about/` and home to 2–3 flagship posts; have quantum-diversity link qber (with trailing slash) to build the quantum cluster.
+- **Kill stale `/categories/quantum-computing/`** + GSC Removal.
+
+**🟡 Minor / ongoing**
+- qber internal link to quantum-diversity missing trailing slash; stray/duplicate `---` rules in older posts.
+- **Cross-posting:** Publish all 6 posts to Medium and Dev.to with canonical URLs set. Share on LinkedIn with engagement.
+- **More posts:** Target 2/month. Alternate Computing and Quantum/AI.
+- **Wayback Machine:** Submit each post URL to web.archive.org/save (start with the 2 new posts).
+- **GSC URL Inspection:** Request indexing for the 2 new posts + qber + "upstream"; re-check the 18 "Discovered" in ~2 weeks.
+- **LinkedIn website field:** Confirm harshitjain.io is set in LinkedIn Contact Info → Website.
+- **Schema validation:** Run validator.schema.org on all 6 posts *after* the breadcrumb fix deploys.
+- **Evidence package:** Begin compiling attorney documentation; capture the indexed-count growth (2→19) screenshot now.
+
+**✅ Done**
+- **AI category** — populated by `agentic-coding-workflow-judgment` (was empty). The `/ai/` tab now renders it (live-verified).
 
 ---
 

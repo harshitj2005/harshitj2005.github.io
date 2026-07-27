@@ -6,4 +6,5 @@ Gemfile.lock
 .DS_Store
 Resume:work exp/
 .claude*
-seo-notes/*
+seo-notes
+claude/
